@@ -1,0 +1,14 @@
+can you analyze the book shop part of this web site with the main page buchlad.htm and then create a new web-Site with templates for
+
+- buchlad.html main page
+- one template for books.html
+- one template for booksindex.html
+- a folder bucher for the images
+
+- I want to have all in html no fancy functionality
+- modern css-style with light pastel colors 
+- design must be adaptable for mobiles
+- Content does not need to be migrated, just use examples
+
+put the new WEB site in the folder C:\wmen\Programming\HTML\BookShop
+

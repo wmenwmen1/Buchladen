@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buchladen - Buch Details</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        body {
+            background-image: url('bucher/bookshop_interior_3.png');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Buch Details</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Startseite</a></li>
+                    <li><a href="booksindex.html">Inhaltsverzeichnis</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="book-detail">
+            <!-- Book Image -->
+            <img src="bucher/placeholder.jpg" alt="Großes Buchcover"
+                style="height: 400px; width: 300px; object-fit: cover; background-color: #e3f2fd;">
+
+            <!-- Book Info -->
+            <div class="book-info">
+                <h2>Der Titel des Buches</h2>
+                <p class="meta">Von <strong>Autor Name</strong> | Erschienen: 2024</p>
+
+                <p>
+                    Hier steht die ausführliche Beschreibung des Buches. Dieser Text kann über mehrere Zeilen gehen und
+                    den Inhalt des Werkes zusammenfassen.
+                    Die Gestaltung ist bewusst schlicht und modern gehalten, um den Fokus auf den Inhalt zu legen.
+                </p>
+                <br>
+                <p>
+                    Weitere Details zum Inhalt, Schreibstil oder Kritiken können hier eingefügt werden.
+                </p>
+
+                <p style="font-size: 0.9rem; color: #888; margin-top: 0.5rem;">ISBN: 978-3-1234-5678-9</p>
+
+                <div style="margin-top: 2rem;">
+                    <a href="booksindex.html"
+                        style="background-color: var(--color-bg-secondary); padding: 10px 20px; border-radius: 4px; color: var(--color-text-secondary); margin-right: 10px;">&larr;
+                        Zurück zur Übersicht</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Buchladen. Alle Rechte vorbehalten.</p>
+    </footer>
+
+</body>
+
+</html>

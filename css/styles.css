@@ -1,0 +1,202 @@
+:root {
+    /* Pastel Color Palette */
+    --color-bg-primary: #FFFDF5;
+    /* Creamy White */
+    --color-bg-secondary: #E3F2FD;
+    /* Soft Pastel Blue */
+    --color-accent: #B2DFDB;
+    /* Pastel Mint */
+    --color-text-primary: #37474F;
+    /* Dark Blue Grey */
+    --color-text-secondary: #546E7A;
+    /* Medium Blue Grey */
+    --color-link: #FFAB91;
+    /* Soft Coral */
+    --color-white: #FFFFFF;
+
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+
+    --font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--color-bg-primary);
+    background-image: url('../bucher/bookstore_bg.png');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: var(--color-text-primary);
+    line-height: 1.6;
+}
+
+a {
+    color: var(--color-link);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-text-primary);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-md);
+}
+
+header {
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: var(--spacing-lg) 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    margin-bottom: var(--spacing-lg);
+}
+
+header h1 {
+    color: var(--color-text-secondary);
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin-top: var(--spacing-md);
+}
+
+nav li {
+    margin: 0 var(--spacing-md);
+}
+
+nav a {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: var(--color-text-secondary);
+}
+
+nav a:hover {
+    color: var(--color-accent);
+}
+
+.hero {
+    text-align: center;
+    padding: 3rem 1rem;
+    background-color: rgba(227, 242, 253, 0.85);
+    /* soft blue with opacity */
+    border-radius: 8px;
+    margin-bottom: var(--spacing-lg);
+}
+
+.hero h2 {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-md);
+}
+
+/* Grid for Books Index */
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.book-card {
+    background: rgba(255, 255, 255, 0.85);
+    padding: var(--spacing-md);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+.book-card:hover {
+    transform: translateY(-5px);
+}
+
+.book-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: var(--spacing-md);
+    background-color: #eee;
+}
+
+.book-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.book-card .author {
+    color: var(--color-text-secondary);
+    font-style: italic;
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Single Book Detail */
+.book-detail {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    background: rgba(255, 255, 255, 0.85);
+    padding: var(--spacing-lg);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.book-detail img {
+    max-width: 100%;
+    border-radius: 8px;
+    align-self: center;
+}
+
+.book-info {
+    flex: 1;
+}
+
+.book-info h2 {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.book-info .meta {
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-lg);
+}
+
+.book-info .price {
+    font-size: 1.5rem;
+    color: var(--color-accent);
+    font-weight: bold;
+    margin-top: var(--spacing-md);
+}
+
+footer {
+    text-align: center;
+    padding: var(--spacing-lg);
+    color: var(--color-text-secondary);
+    margin-top: var(--spacing-lg);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.85);
+}
+
+/* Mobile Responsiveness */
+@media (min-width: 768px) {
+    .book-detail {
+        flex-direction: row;
+        align-items: start;
+    }
+
+    .book-detail img {
+        max-width: 300px;
+    }
+}

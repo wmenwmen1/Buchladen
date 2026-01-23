@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buchladen - Kategorie Romane</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        body {
+            background-image: url('bucher/bookshop_interior_2.png');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Kategorie: Romane</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Startseite</a></li>
+                    <li><a href="booksindex.html">Inhaltsverzeichnis</a></li>
+                    <li><a href="#" style="color: var(--color-accent);">Kategorie</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div
+            style="background-color: rgba(255, 255, 255, 0.85); padding: 1rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); overflow-x: auto;">
+            <table style="width: 100%; border-collapse: collapse;">
+                <thead>
+                    <tr style="text-align: left; border-bottom: 2px solid var(--color-bg-secondary);">
+                        <th style="padding: 1rem; width: 80px;">Bild</th>
+                        <th style="padding: 1rem;">Titel / Autor</th>
+                        <th style="padding: 1rem; text-align: right;">Aktion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Item 1 -->
+                    <tr>
+                        <td style="padding: 1rem;">
+                            <img src="bucher/Zott.jpg" alt="Cover"
+                                style="width: 50px; height: 75px; object-fit: cover; border-radius: 2px;">
+                        </td>
+                        <td style="padding: 1rem;">
+                            <strong style="display: block; font-size: 1.1rem;">Eine Frage der Chemie</strong>
+                            <span style="color: var(--color-text-secondary); font-size: 0.9rem;">Bonnie Garmus</span>
+                        </td>
+                        <td style="padding: 1rem; text-align: right;">
+                            <a href="books009.html"
+                                style="background-color: var(--color-bg-secondary); padding: 5px 10px; border-radius: 4px; font-size: 0.9rem;">Details</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div style="margin-top: 2rem; text-align: center;">
+            <a href="index.html" style="text-decoration: underline;">&larr; Zurück zur Startseite</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Buchladen. Alle Rechte vorbehalten.</p>
+    </footer>
+
+</body>
+
+</html>
