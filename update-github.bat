@@ -1,70 +1,57 @@
 @echo off
 setlocal
 
-REM ----------------------------------------
-REM  Projektordner setzen
-REM ----------------------------------------
-cd /d C:\wmen\Programming\HTML\BookShop
-
 echo ----------------------------------------
 echo   GitHub Update wird gestartet...
 echo ----------------------------------------
 
-REM ----------------------------------------
-REM  Prüfen, ob Git installiert ist
-REM ----------------------------------------
-git --version >nul 2>&1
+REM In das Verzeichnis wechseln, in dem das Skript liegt
+cd /d "%~dp0"
+
+REM Prüfen, ob wir in einem Git-Repo sind
+git rev-parse --is-inside-work-tree >nul 2>&1
 if errorlevel 1 (
-    echo Fehler: Git ist nicht installiert oder nicht im PATH.
+    echo Fehler: Dieses Verzeichnis ist kein Git-Repository.
+    echo Bitte in den Projektordner wechseln.
     pause
-    exit /b
+    exit /b 1
 )
 
-REM ----------------------------------------
-REM  Prüfen, ob ein Remote 'origin' existiert
-REM ----------------------------------------
-git remote get-url origin >nul 2>&1
-if errorlevel 1 (
-    echo Fehler: Kein Remote 'origin' gefunden.
-    echo Bitte einmal manuell ausführen:
-    echo git remote add origin https://github.com/wmenwmen1/Buchladen.git
+echo Änderungen werden geprüft...
+
+REM Prüfen, ob es Änderungen gibt
+git status --porcelain >nul 2>&1
+if %errorlevel% neq 0 (
+    echo Fehler beim Prüfen des Status.
     pause
-    exit /b
+    exit /b 1
 )
 
-REM ----------------------------------------
-REM  Änderungen hinzufügen
-REM ----------------------------------------
-git add .
-
-REM ----------------------------------------
-REM  Commit mit Standardnachricht
-REM ----------------------------------------
-git commit -m "Automatisches Update" >nul 2>&1
-
-REM Wenn nichts zu committen ist, abbrechen
+git status --porcelain | findstr . >nul
 if errorlevel 1 (
     echo Keine Änderungen gefunden. Nichts zu committen.
+    echo ----------------------------------------
+    echo   Update abgeschlossen!
+    echo ----------------------------------------
     pause
-    exit /b
+    exit /b 0
 )
 
-REM ----------------------------------------
-REM  Push versuchen
-REM ----------------------------------------
-echo Push wird ausgeführt...
-git push origin main >pushlog.txt 2>&1
+echo Änderungen gefunden. Commit wird erstellt...
 
-REM Prüfen, ob Authentifizierung erforderlich war
-findstr /i "authentication" pushlog.txt >nul
-if not errorlevel 1 (
-    echo Authentifizierung erforderlich. Browser wird geöffnet...
-    git push origin main
+git add .
+git commit -m "Automatisches Update"
+
+echo Push nach GitHub wird ausgeführt...
+
+git push origin main
+if errorlevel 1 (
+    echo Fehler beim Push. Bitte prüfen, ob der Branch 'main' existiert.
+    pause
+    exit /b 1
 )
 
 echo ----------------------------------------
 echo   Update abgeschlossen!
 echo ----------------------------------------
-
 pause
-endlocal

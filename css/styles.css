@@ -200,3 +200,125 @@ footer {
         max-width: 300px;
     }
 }
+
+/* Mobile-specific styles (screens smaller than 768px) */
+@media (max-width: 767px) {
+    /* Smaller header text on mobile */
+    header h1 {
+        font-size: 1.5rem;
+        padding: 0 1rem;
+    }
+
+    /* Stack navigation vertically on very small screens */
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    nav li {
+        margin: 0.25rem 0;
+    }
+
+    nav a {
+        font-size: 1rem;
+    }
+
+    /* Reduce container padding on mobile */
+    .container {
+        width: 95%;
+        padding: 0.5rem;
+    }
+
+    /* Smaller hero section */
+    .hero {
+        padding: 2rem 1rem;
+    }
+
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+
+    /* Adjust book info headings */
+    .book-info h2 {
+        font-size: 1.5rem;
+    }
+
+    /* Make tables scrollable horizontally */
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Adjust table cell padding for mobile */
+    table th,
+    table td {
+        padding: 0.5rem !important;
+        font-size: 0.85rem !important;
+    }
+
+    /* Make images in tables slightly smaller */
+    table img {
+        width: 40px !important;
+        height: 60px !important;
+    }
+
+    /* Reduce spacing on mobile */
+    header {
+        padding: 1rem 0;
+        margin-bottom: 1rem;
+    }
+
+    /* Adjust button/link padding */
+    a[style*="padding: 10px 20px"] {
+        padding: 8px 15px !important;
+        font-size: 0.9rem !important;
+    }
+
+    /* Excel tables on mobile */
+    .excel-table {
+        font-size: 0.75rem !important;
+    }
+
+    .excel-tables-container {
+        padding: 1rem !important;
+    }
+}
+
+/* Very small mobile devices (screens smaller than 480px) */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.25rem;
+    }
+
+    nav a {
+        font-size: 0.9rem;
+    }
+
+    .hero h2 {
+        font-size: 1.25rem;
+    }
+
+    .book-info h2 {
+        font-size: 1.25rem;
+    }
+
+    /* Even smaller table text */
+    table th,
+    table td {
+        padding: 0.25rem !important;
+        font-size: 0.75rem !important;
+    }
+
+    /* Reduce image sizes further */
+    table img {
+        width: 35px !important;
+        height: 52px !important;
+    }
+
+    .excel-table {
+        font-size: 0.7rem !important;
+    }
+}
