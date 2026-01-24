@@ -244,6 +244,24 @@ footer {
         font-size: 1.5rem;
     }
 
+    /* Featured book section - stack vertically on mobile */
+    .featured-book {
+        flex-direction: column !important;
+        padding: 1rem !important;
+        gap: 1rem !important;
+    }
+
+    .featured-book > div:first-child {
+        flex: 0 0 auto !important;
+        max-width: 150px !important;
+        margin: 0 auto;
+    }
+
+    .featured-book img {
+        width: 100% !important;
+        max-width: 150px !important;
+    }
+
     /* Make tables scrollable horizontally */
     table {
         display: block;
@@ -257,6 +275,12 @@ footer {
     table td {
         padding: 0.5rem !important;
         font-size: 0.85rem !important;
+    }
+
+    /* Make images in category tables smaller on mobile */
+    .category-table img {
+        width: 35px !important;
+        height: 52px !important;
     }
 
     /* Make images in tables slightly smaller */
