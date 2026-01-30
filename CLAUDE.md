@@ -9,12 +9,12 @@ This is a static HTML bookshop website ("Buchladen") with German language conten
 ## File Structure
 
 The project consists of:
-- **index.html** - Main landing page with featured book and category table
+- **index.html** - Main landing page with featured book and category table (categories are clickable links)
 - **booksindex.html** - Book listing page with two tables (by author and by title)
 - **books.html** - Individual book detail page template (not used directly)
 - **books001.html, books002.html, etc.** - Individual book detail pages (numbered sequentially)
 - **bookcategory.html** - Category listing page template (not used directly)
-- **category01.html through category06.html** - Category pages for each book category
+- **category01.html through category06.html** - Category pages for each book category (book titles are clickable links)
 - **css/styles.css** - All styling with pastel color scheme and responsive design
 - **bucher/** - Image directory containing book covers and background images
 
@@ -106,7 +106,27 @@ Find the appropriate category file based on the book's category:
 - Science Fiction → category05.html
 - Swimming → category06.html
 
-Add a new table row with the book's thumbnail, title, author, and link to booksXXX.html
+Add a new table row with:
+- Book thumbnail image (50px × 75px)
+- Book title as clickable link (underlined, with author name below)
+
+**Important**: The table has only TWO columns (Bild and Titel/Autor). The title itself is the link to the book detail page.
+
+Example structure:
+```html
+<tr style="border-bottom: 1px solid #eee;">
+    <td style="padding: 1rem;">
+        <img src="bucher/BookImage.jpg" alt="Cover"
+            style="width: 50px; height: 75px; object-fit: cover; border-radius: 2px;">
+    </td>
+    <td style="padding: 1rem;">
+        <strong style="display: block; font-size: 1.1rem;"><a href="books0XX.html" style="text-decoration: underline; color: var(--color-text-primary);">Book Title Here</a></strong>
+        <span style="color: var(--color-text-secondary); font-size: 0.9rem;">Author Name</span>
+    </td>
+</tr>
+```
+
+Note: The wrapping div should have class="category-table" for proper mobile styling
 
 ### Step 4: Update booksindex.html
 Add entries to BOTH tables in alphabetical order:
@@ -134,3 +154,30 @@ Zum Kaufen: [Amazon URL]
 - Use dark blue (#0066cc) underlined links for author/title links in booksindex.html
 - Book detail pages use bookshop_interior_3.png background
 - Category pages use bookshop_interior_2.png background
+
+## Mobile Responsiveness
+
+The website is fully responsive with specific mobile optimizations:
+
+### Mobile Breakpoints
+- **Mobile**: < 768px - Reduced text sizes, vertical navigation, smaller images
+- **Small Mobile**: < 480px - Further size reductions
+- **Tablet/Desktop**: ≥ 768px - Full desktop layout
+
+### Mobile-Specific Features
+1. **Featured Book Section (index.html)**: Stacks vertically with 150px max image width
+2. **Category Tables**: Images resize to 35px × 52px on mobile
+3. **Book Detail Images**: Automatically reduce to 133px × 100px (2/3 smaller) on mobile
+4. **Tables**: Horizontal scrolling enabled with touch support
+5. **Navigation**: Stacks vertically on small screens
+
+### Category Page Structure
+- Category pages use `.category-table` class on the wrapper div for proper mobile image sizing
+- Tables have only two columns: "Bild" and "Titel / Autor"
+- No separate "Aktion" or "Details" column - titles are directly clickable
+
+### Index Page Category Table
+- The category table in index.html has only two columns: "Kategorie" and "Beschreibung"
+- Category names are clickable underlined links that navigate to category pages
+- No separate "Link" column - categories themselves are the navigation links
+- Example: `<a href="category01.html" style="text-decoration: underline; color: var(--color-text-primary);">Ökonomie</a>`
