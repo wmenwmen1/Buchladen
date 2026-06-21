@@ -198,6 +198,7 @@ footer {
 
     .book-detail img {
         max-width: 300px;
+        align-self: flex-start;
     }
 }
 
