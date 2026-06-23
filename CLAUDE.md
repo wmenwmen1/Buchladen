@@ -149,6 +149,7 @@ Zum Kaufen: [Amazon URL]
 ```
 
 ### Important Notes
+- Amazon purchase links must use **https** (e.g. `https://www.amazon.de/exec/obidos/ASIN/...`), never `http://`
 - Do NOT include price information (removed from all pages)
 - All book images should be in the bucher/ folder
 - Use dark blue (#0066cc) underlined links for author/title links in booksindex.html
